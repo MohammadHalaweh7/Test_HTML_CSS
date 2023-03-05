@@ -1,49 +1,45 @@
-*{
+/* Mohammad Halaweh - 0598939763 */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 /* My Font */
-@font-face
-{
+@font-face {
     src: url(../fonts/Metropolis-SemiBoldItalic.otf);
     font-family: MyFont;
 }
 
-:root
-{
+:root {
     --background-color: #fff;
     --background: #F2F2F2;
-    --text-color:#555;
-}
-/*For Dark Mode */
-.dark-theme
-{
-    --background-color: #000;
-    --text-color:#fff;
-    --background: #000;
-}
-/*For Light Mode */
-.light-theme
-{
-    --background-color: #fff;
-    --background: #F2F2F2;
-    --text-color:#555;
+    --text-color: #555;
+    --background-card: #fff;
 }
 
-body
-{
+
+/*For Dark Mode */
+.dark-theme {
+    --background-color: #000;
+    --text-color: #fff;
+    --background: rgb(44, 44, 44);
+    --background-card: rgb(44, 44, 44);
+}
+
+
+body {
     background: var(--background-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     /* font-family: MyFont; */
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* ---------------Start nav--------------- */
-nav
-{
+
+/* ---------------------------------------------Start nav--------------------------------------------- */
+nav {
     background: var(--background);
     height: 75px;
     display: flex;
@@ -51,97 +47,50 @@ nav
     justify-content: center;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.19);
 }
-/* Phone */
-@media (max-width:575px) 
-{
-    nav
-    {
-        height: 200px;
-        width: 386px;
-        padding-bottom: 80px;
-    }  
-}
-.container
-{
-    height: 605px;
+
+
+.container {
+    height: 650px;
     width: 60%;
     margin: auto;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     padding: 40px 20px 40px 20px;
 }
-/* Phone */
-@media (max-width:575px) 
-{
-    .container
-    {
-        height: 2070px;
-        width: 80%;  
-    } 
-}
-/* Tablet */
-@media (min-width:576px) and (max-width:1000px) 
-{
-    .container
-    {
-        height: 1075px;
-        width: 76%;
-    }
-}
 
-.row
-{
+
+.row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* z-index: 9999; */
 }
-ul
-{
+
+
+ul {
     list-style: none;
 }
-nav .list-item 
-{
+
+
+nav .list-item {
     display: flex;
     margin-right: 290px;
     text-transform: capitalize;
 }
-/* Phone */
-@media (max-width:575px) 
-{
-    nav .list-item 
-    {
-     position: absolute;
-     flex-direction:row ;
-     top: 80px;
-     left: 0%;
-     padding-top: 60px;
-     width: 500px;
-     text-align: center;
-    }
-    
-}
-/* Tablet */
-@media (min-width:576px) and (max-width:1000px) 
-{
-    nav .list-item 
-    {
-     margin-right: 50px;
-    }
-}
 
-nav .list-item .item a
-{
+
+nav .list-item .item a {
     color: var(--text-color);
     margin-left: 35px;
 }
 
-a
-{
+
+
+a {
     text-decoration: none;
 }
-button
-{
+
+
+button {
     margin-right: 30px;
     background-color: orange;
     padding: 7px 20px 7px 20px;
@@ -151,147 +100,148 @@ button
     text-transform: capitalize;
     border-radius: 10px;
     border: 1px solid orange;
+    cursor: pointer;
 
 }
-nav .drops
-{
-   position: absolute;
+
+
+
+button:active {
+    border: 1px solid rgb(204, 138, 16);
+    box-shadow: 0px 0px 6px 0px rgb(204, 138, 16);
+}
+
+
+
+nav .drops {
+    /* background-color: red; */
+    display: none;
+    position: absolute;
     margin-top: 15px;
-    opacity: 0;
-    transition: 1s;
 }
 
-nav button .drops .drop 
-{
+
+
+nav button .drops .drop {
+    display: list-item;
+    position: relative;
     padding-bottom: 10px;
     padding-left: 5px;
     padding-right: 50px;
-    background-color: #F2F2F2;
-}
-
-nav button .drops .drop a
-{
+    background: var(--background);
     color: var(--text-color);
 }
 
-nav button .drops .drop a:hover
-{
-    color: black;
+
+nav button:focus>.drops,
+nav button:active>.drops {
+    display: inherit;
 }
 
-nav button:hover .drops
-{
-    opacity: 1;
+
+nav button .drops .drop i {
+    margin-right: 12px;
+    transition: 1s;
 }
-/* ----------------End Nav------------- */
+
+nav button .drops .drop:hover i {
+    transform: translateX(+10px)
+}
+
+/* ------------------------------------------End Nav--------------------------------------- */
 
 
-/* ----------------Start Header---------------- */
-.Cards
-{
-    overflow:hidden;
+
+
+
+/* ----------------------------------------Start Header-------------------------------------- */
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
 }
-/* Phone */
-@media (max-width:575px) 
-{
-    .Cards
-    {
-    overflow:hidden;
-    margin-left: 30px;
-    }
-}
-/* Tablet */
-@media (min-width:576px) and (max-width:1000px) 
-{
-    .Cards
-    {
-        margin-right: 70px;
-        margin-left: 20px;
-    }
-}
-.card
-{
+
+
+.card {
+
     padding: 7px;
     height: 230px;
     background-color: white;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    
-    float: left;
-    width: 22.5%;
-    margin: 10px;
-    
+    background: var(--background-card);
+    width: 195px;
 }
-/* Phone */
-@media (max-width:575px) 
-{
-    .card
-    {
-        width: 81%;
-    } 
-}
-/* Tablet */
-@media (min-width:576px) and (max-width:1000px) 
-{
-    .card
-    {
-        width: 36%;
-        margin: 10px 10px 10px 60px;
-    }
-}
+
+
+
 /* The Green Badge */
-.Green-Badge
-{
+.green-badge {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background-color: green;
     position: absolute;
-    z-index: 9999;
+    margin-left: -5px;
+    margin-top: -5px;
+    /* Or we can solve it by Befoe and After  */
 }
+
+
+
 /* The number inside green badge */
-header .Green-Badge p
-{
+header .green-badge p {
     color: white;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
+
+
+
 /* Image */
-.img-card img
-{
+.img-card img {
     border-radius: 10px;
     margin: auto;
 }
 
+
+
 /* Title & Description */
-header .Title-Description
-{
-    padding: 5px 10px  5px  10px ;
+header .title-description {
+    padding: 5px 10px 5px 10px;
+    color: var(--text-color);
 }
+
 
 /* The description */
-header .Title-Description p
-{
-/* background-color: aqua; */
-  width: 170px;
-  color: gray;
-  margin-top: 5px;
-  font-size: 11px;
+header .title-description p {
+    width: 170px;
+    color: gray;
+    margin-top: 5px;
+    font-size: 11px;
+    color: var(--text-color);
 }
 
+
+
 /* Info Button & View Button */
-header .Buttons
-{
+header .buttons {
     display: flex;
     margin-top: 10px;
 }
-/* ---------------End Header--------------- */
 
-/* ---------------Start Footer--------------- */
-footer
-{
+/* ---------------------------------------------End Header--------------------------------------------- */
+
+
+
+/* ---------------------------------------------Start Footer--------------------------------------------- */
+footer {
     text-transform: capitalize;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -299,6 +249,116 @@ footer
     color: var(--text-color);
     text-align: center;
     font-size: 20px;
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
-/* ---------------end Footer--------------- */
+
+/* ---------------------------------------------end Footer--------------------------------------------- */
+
+
+
+/* ---------------------------------------------Media Query--------------------------------------------- */
+
+@media (min-width:0px) and (max-width:480px) {
+    nav {
+        height: 200px;
+        width: 100%;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        height: 2090px;
+        width: 60%;
+        margin-right: 156px;
+        margin: auto;
+    }
+
+    nav .list-item {
+        /* background-color: red; */
+        position: absolute;
+        flex-direction: row;
+        top: 80px;
+        left: 0%;
+        padding-top: 60px;
+        width: 500px;
+        text-align: center;
+    }
+
+    nav button {
+        margin-right: 120px;
+    }
+
+    .cards {
+        overflow: hidden;
+        margin-left: 0px;
+    }
+
+    .card {
+        width: 193.5px;
+    }
+}
+
+
+
+@media (min-width:481px) and (max-width:768px) {
+    nav {
+        height: 200px;
+        width: 100%;
+        padding-bottom: 80px;
+    }
+
+    .container {
+        height: 2230px;
+        width: 60%;
+    }
+
+    nav .list-item {
+        position: absolute;
+        flex-direction: row;
+        top: 80px;
+        left: 0%;
+        padding-top: 60px;
+        margin-left: 15%;
+        width: 500px;
+        text-align: center;
+    }
+
+    .cards {
+        overflow: hidden;
+        margin-left: 0px;
+    }
+
+    .card {
+        width: 193.5px;
+    }
+
+    footer {
+        padding-right: 50px;
+    }
+}
+
+
+
+@media (min-width:769px) and (max-width:1279px) {
+    .container {
+        height: 1200px;
+        width: 76%;
+    }
+
+    nav .list-item {
+        margin-right: 50px;
+    }
+
+    .cards {
+        margin-left: -18px;
+    }
+
+    .card {
+        width: 193.5px;
+        margin: 10px 10px 10px 60px;
+    }
+}
+
+/* -----------------------------------------------End--------------------------------------- */
